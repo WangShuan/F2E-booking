@@ -5,9 +5,9 @@
         <a href="#" @click.prevent="closeRet()" class="booking-ret-close"
           >&times;</a
         >
-        <img class="booking-ret-img" src="/img/icons/list_null.svg" />
+        <img class="booking-ret-img" src="./img/icons/list_null.svg" />
         <img
-          src="/img/icons/success.svg"
+          src="./img/icons/success.svg"
           alt=""
           class="booking-ret-positionImg"
         />
@@ -23,8 +23,12 @@
         <a href="#" @click.prevent="closeRet()" class="booking-ret-close"
           >&times;</a
         >
-        <img class="booking-ret-img" src="/img/icons/list_null.svg" />
-        <img src="/img/icons/fail.svg" alt="" class="booking-ret-positionImg" />
+        <img class="booking-ret-img" src="./img/icons/list_null.svg" />
+        <img
+          src="./img/icons/fail.svg"
+          alt=""
+          class="booking-ret-positionImg"
+        />
         <div class="booking-ret-title">預約失敗</div>
         <div class="booking-ret-detail">
           哎呀！晚了一步！您預約的日期已經被預約走了， 再看看其它房型吧

@@ -10,7 +10,7 @@
           @click="showAlbum(currentRoom.imageUrl[i])"
         >
           <router-link to="/" class="preBtn">
-            <img src="/img/icons/previous.svg" class="preBtn-img" alt="" />
+            <img src="./img/icons/previous.svg" class="preBtn-img" alt="" />
             查看其它房型
           </router-link>
 
@@ -62,14 +62,19 @@
         >
           <img
             v-if="item.state"
-            src="/img/icons/ok.svg"
+            src="./img/icons/ok.svg"
             alt=""
             class="positionIcon"
           />
-          <img v-else src="/img/icons/cancel.svg" alt="" class="positionIcon" />
+          <img
+            v-else
+            src="./img/icons/cancel.svg"
+            alt=""
+            class="positionIcon"
+          />
           <img
             class="room-icon-img"
-            :src="`/img/icons/${item.name}.svg`"
+            :src="`./img/icons/${item.name}.svg`"
             :alt="item.name"
           />
           <span class="room-icon-text">{{ item.name }}</span>
@@ -96,7 +101,7 @@
 
     <div v-if="imgUrl" class="album" @click="imgUrl = ''">
       <img
-        src="/img/icons/album-prev.svg"
+        src="./img/icons/album-prev.svg"
         class="album-btn"
         @click.stop="lessImgUrl()"
         alt=""
@@ -107,7 +112,7 @@
         class="album-img"
       ></div>
       <img
-        src="/img/icons/album-next.svg"
+        src="./img/icons/album-next.svg"
         class="album-btn"
         @click.stop="addImgUrl()"
         alt=""
