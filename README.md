@@ -1,24 +1,17 @@
 # booking
 
-## Project setup
-```
-npm install
-```
+2019 年 The F2E - 前端修練精神時光屋
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+第六關投稿作品 - 旅館預約服務
 
-### Compiles and minifies for production
-```
-npm run build
-```
+使用 jQuery + Vue 做成
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 使用說明
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 任意點擊首頁的六個圖片按鈕即可進入該房間查看房間資訊。
+
+- 進入單個房間頁面後 可點擊左上角 `查看其它房型` 返回首頁。
+
+- 在房間頁面的右下角有日曆插件可以自由選取天數 並且會馬上返回選取天數與其價格在日曆的左方。
+
+- 點擊房間頁面的左下角 `Booking Now` 即可開啟表單頁面。

@@ -531,7 +531,6 @@
   &-info {
     color: $primary;
     padding: 30px;
-    background-color: #fff;
 
     & > .roomTitle {
       font-weight: bold;
@@ -726,6 +725,7 @@
   height: 100%;
   position: relative;
   overflow: auto;
+  background-color: #fff;
   @include breakpoint-sm {
     width: 100%;
     order: 1;
