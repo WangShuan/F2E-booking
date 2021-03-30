@@ -1,0 +1,25 @@
+@mixin breakpoint-xl() {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin breakpoint-lg() {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+@mixin breakpoint-md() {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin breakpoint-sm() {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+@mixin breakpoint-xs() {
+  @media (max-width: 375px) {
+    @content;
+  }
+}

@@ -1,0 +1,37 @@
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 100vh;
+  text-align: center;
+  z-index: 100;
+  font-size: 30px;
+}
+
+.d-none {
+  display: none;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter ,
+.fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.show {
+  display: block;
+}
+
+.clear {
+  clear: both;
+}

@@ -1,0 +1,744 @@
+#app {
+  height: 100%;
+}
+
+.container {
+  max-width: 1680px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+////////////////////// home.vue
+.home {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-opacity {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  @include breakpoint-sm {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+}
+
+.logo {
+  height: calc(275px * 2);
+  position: relative;
+  @include breakpoint-xl {
+    height: calc(230px * 2);
+  }
+  @include breakpoint-sm() {
+    height: 150px * 3;
+    display: flex;
+    justify-content: center;
+  }
+  &-img {
+    margin-bottom: 80px;
+  }
+  &-title {
+    font-size: 12px;
+    line-height: 18px;
+    font-family: "Noto Sans CJK TC";
+    position: absolute;
+    bottom: 80px;
+    width: max-content;
+    @include breakpoint-sm {
+      margin-top: 80px;
+    }
+  }
+  &-text {
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    & > li {
+      font-size: 12px;
+      line-height: 18px;
+      font-family: "Noto Sans CJK TC";
+      font-weight: 300;
+      margin: 3px 0;
+    }
+  }
+  &-page {
+    margin: 0 auto;
+    width: fit-content;
+    position: absolute;
+    bottom: -12%;
+    left: 25%;
+    @include breakpoint-sm {
+      display: none;
+    }
+    & > span {
+      cursor: pointer;
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 1px solid white;
+      box-sizing: border-box;
+      border-radius: 50%;
+      margin-right: 11px;
+    }
+    &-active {
+      background-color: #fff;
+    }
+  }
+}
+
+.btnGroup {
+  width: calc(275px * 3);
+  height: calc(275px * 2);
+  list-style: none;
+  @include breakpoint-xl {
+    width: calc(230px * 2);
+    height: calc(230px * 3);
+  }
+  @include breakpoint-lg() {
+    width: 180px * 2;
+    height: 180px * 3;
+  }
+  @include breakpoint-sm() {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    order: 1;
+  }
+  &-footer {
+    text-align: right;
+    position: absolute;
+    bottom: -12%;
+    right: 0;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 17px;
+    font-family: "Open Sans";
+    opacity: 0.6;
+    width: max-content;
+    @include breakpoint-xl {
+      bottom: -24px;
+    }
+    @include breakpoint-sm() {
+      position: initial;
+      margin: 30px auto;
+    }
+  }
+}
+.imgBtn {
+  background-position: center;
+  background-size: cover;
+  width: 275px;
+  float: left;
+  height: 275px;
+  cursor: pointer;
+  @include breakpoint-xl() {
+    width: 230px;
+    height: 230px;
+  }
+  @include breakpoint-lg() {
+    width: 180px;
+    height: 180px;
+  }
+  @include breakpoint-sm() {
+    height: 150px;
+    width: 150px;
+  }
+  &:hover {
+    .imgBtn-active {
+      display: block;
+    }
+  }
+}
+.imgBtn-active {
+  font-size: 19px;
+  line-height: 26px;
+  font-family: "Open Sans";
+  text-shadow: 0px 3px 6px #00000029;
+  text-align: center;
+  line-height: 275px;
+  background-color: rgba(56, 71, 11, 0.6);
+  display: none;
+  @include breakpoint-xl() {
+    line-height: 230px;
+  }
+  @include breakpoint-lg() {
+    line-height: 180px;
+  }
+  @include breakpoint-sm() {
+    line-height: 150px;
+  }
+  @include breakpoint-xs() {
+    line-height: 120px;
+  }
+}
+
+/////////////// booking.vue
+
+.bg-linearGradient {
+  position: absolute;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1)
+  );
+  width: 100%;
+  height: 100%;
+}
+
+.imgGroup {
+  width: 40%;
+  height: 100%;
+  background-position: top;
+  background-size: cover;
+  position: relative;
+  @include breakpoint-sm {
+    width: 100%;
+    order: 2;
+  }
+  &-content {
+    padding: 20% 20% 0;
+    cursor: pointer;
+    @include breakpoint-md {
+      padding: 20% 30px 0;
+    }
+  }
+  &-text {
+    margin-top: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: $primary;
+    @include breakpoint-md {
+      margin-top: 70vh;
+    }
+    @include breakpoint-sm {
+      margin-top: 400px;
+    }
+  }
+  &-btn {
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    font-family: "Open Sans";
+    color: #fff;
+    background-color: $primary;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: darken($primary, 5%);
+    }
+  }
+}
+.preBtn {
+  color: $primary;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Noto Sans CJK TC";
+  &-img {
+    width: 8px;
+    height: 16px;
+    margin: -2px 5px;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.price {
+  font-size: 36px;
+  line-height: 49px;
+  font-family: "Open Sans";
+  margin-right: 16px;
+}
+.day {
+  font-size: 20px;
+  line-height: 29px;
+  font-family: "Noto Sans CJK TC";
+  margin-left: 16px;
+}
+.roomContent {
+  width: calc(60% - 100px);
+  height: 100%;
+  overflow: auto;
+  color: $primary;
+  padding-left: 30px;
+  padding-right: 70px;
+  @include breakpoint-xl {
+    width: calc(60% - 60px);
+    padding-right: 30px;
+  }
+  @include breakpoint-sm {
+    width: 100%;
+    height: auto;
+    order: 1;
+  }
+}
+.room {
+  &-title {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-top: 50px;
+    @include breakpoint-xl {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+  &-detail {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Noto Sans CJK TC";
+    margin: 30px 0;
+  }
+  &-list {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    font-family: "Noto Sans CJK TC";
+    list-style: none;
+  }
+  &-iconGroup {
+    font-size: 10px;
+    line-height: 15px;
+    font-family: "Noto Sans CJK TC";
+    color: $secondary;
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint-sm {
+      justify-content: center;
+    }
+  }
+  &-icon {
+    height: 62px;
+    text-align: center;
+    margin-right: 55px;
+    margin-bottom: 50px;
+    position: relative;
+    width: 40px;
+    @include breakpoint-xl {
+      margin-right: 45px;
+    }
+    .positionIcon {
+      position: absolute;
+      top: 0;
+      right: -20px;
+    }
+    &-img {
+      width: 40px;
+      height: 40px;
+    }
+    &-text {
+      font-size: 10px;
+      line-height: 14px;
+      font-family: "Open Sans";
+      margin-top: 7px;
+      display: flex;
+      justify-content: center;
+      white-space: nowrap;
+    }
+    &-disable {
+      opacity: 0.2;
+    }
+  }
+}
+
+.dateCheck {
+  clear: both;
+  color: $primary;
+  &-calendar {
+    height: 310px;
+    border: 1px solid $primary;
+    box-shadow: 0px 2px 6px #0000000a;
+  }
+  &-title {
+    margin-bottom: 8px;
+    font-weight: medium;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Noto Sans CJK TC";
+  }
+  &-reset {
+    margin-top: 8px;
+    margin-bottom: 30px;
+    font-weight: medium;
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Noto Sans CJK TC";
+    color: $secondary;
+    cursor: pointer;
+  }
+}
+
+.page {
+  margin: 0 auto;
+  width: max-content;
+  margin-top: 50px;
+  & > span {
+    cursor: pointer;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $primary;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-right: 11px;
+  }
+  .active {
+    background-color: $primary;
+  }
+}
+
+.album {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  &-img {
+    height: calc(100% - 60px);
+    width: 85%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &-btn {
+    cursor: pointer;
+  }
+}
+
+///////////////////// form.vue
+.booking {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 80px;
+  z-index: 5;
+  @include breakpoint-xl {
+    padding: 80px 0;
+  }
+  @include breakpoint-sm {
+    padding: 0;
+  }
+  &-box {
+    width: calc(100% - 160px);
+    height: calc(100% - 160px);
+    border: 1px solid $primary;
+    background-color: $primary;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    @include breakpoint-xl {
+      width: calc(100% - 60px);
+      margin: auto;
+    }
+    @include breakpoint-sm {
+      width: 100%;
+      height: 100%;
+      flex-wrap: wrap;
+    }
+  }
+  &-form {
+    padding: 50px 65px 26px;
+    @include breakpoint-md {
+      padding: 26px;
+    }
+    &-lable {
+      font-size: 14px;
+      line-height: 20px;
+      font-family: "Noto Sans CJK TC";
+    }
+    &-input {
+      background: #ffffff 0% 0% no-repeat padding-box;
+      width: 100%;
+      margin: 7px auto 16px;
+      border: 1px solid #fff;
+      font: normal normal 600 16px/22px;
+      font-family: "Open Sans";
+      padding: 8px 10px;
+      box-sizing: border-box;
+      color: #6a6a6a;
+    }
+    &-submit {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 27px;
+      font-family: "Noto Sans CJK TC";
+      width: 100%;
+      border: 1px solid $secondary;
+      background-color: $primary;
+      color: #fff;
+      line-height: 44px;
+    }
+  }
+  &-days {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Noto Sans CJK TC";
+    color: $secondary;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(148, 156, 124, 0.5);
+  }
+  &-totalText {
+    font-weight: medium;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Noto Sans CJK TC";
+    margin-top: 12px;
+    text-align: right;
+  }
+  &-totalPrice {
+    text-align: right;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+    font-family: "Open Sans";
+    margin-bottom: 20px;
+  }
+  &-footerText {
+    font-size: 12px;
+    line-height: 18px;
+    font-family: "Noto Sans CJK TC";
+    margin-top: 18px;
+    display: block;
+    text-align: center;
+  }
+  &-info {
+    color: $primary;
+    padding: 30px;
+    background-color: #fff;
+
+    & > .roomTitle {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 33px;
+      font-family: "Open Sans";
+    }
+    &-title {
+      display: flex;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      font-family: "Noto Sans CJK TC";
+      &-hr {
+        height: 1px;
+        background-color: $secondary;
+        opacity: 0.2;
+        margin: auto 74px auto 08px;
+        flex-grow: 1;
+        @include breakpoint-sm {
+          margin-right: 30px;
+        }
+      }
+    }
+    &-detail {
+      font-size: 14px;
+      line-height: 24px;
+      font-family: "Noto Sans CJK TC";
+    }
+    &-notice {
+      list-style: none;
+      font-size: 12px;
+      line-height: 26px;
+      font-family: "Noto Sans CJK TC";
+      margin-bottom: 26px;
+      margin-top: 12px;
+    }
+    &-stepContent {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 19px;
+      margin-right: 74px;
+      @include breakpoint-xl {
+        margin-right: 0;
+      }
+      @include breakpoint-sm {
+        justify-content: center;
+      }
+    }
+    &-arrow {
+      transform: matrix(-1, 0, 0, -1, 0, 0);
+      height: 14px;
+      margin-top: 18px;
+      @include breakpoint-sm {
+        transform: matrix(0, -1, -1, 0, 0, 0);
+        width: 100%;
+        margin: 10px;
+      }
+    }
+    &-step {
+      width: 160px;
+      &-top {
+        background-color: #949c7c;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &-img {
+        height: 32px;
+      }
+      &-content {
+        font-size: 12px;
+        line-height: 18px;
+        font-family: "Noto Sans CJK TC";
+        border: 1px solid #949c7c;
+        border-radius: 0px 0px 10px 10px;
+        height: 70px;
+        text-align: center;
+        padding-top: 12px;
+        word-break: keep-all;
+        @include breakpoint-md {
+          margin-bottom: 16px;
+        }
+        @include breakpoint-sm {
+          margin: 0;
+        }
+      }
+    }
+  }
+  &-iconGroup {
+    font-size: 10px;
+    line-height: 15px;
+    font-family: "Noto Sans CJK TC";
+    color: $secondary;
+    margin: 26px auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-icon {
+    height: 62px;
+    text-align: center;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 30px;
+    &-img {
+      width: 30px;
+      height: 30px;
+    }
+    &-text {
+      font-size: 10px;
+      line-height: 14px;
+      font-family: "Open Sans";
+      margin-top: 7px;
+      display: flex;
+      justify-content: center;
+      white-space: nowrap;
+    }
+  }
+  &-ret {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 80px;
+    z-index: 100;
+    display: none;
+    &-content {
+      background-color: $primary;
+      width: calc(100% - 160px);
+      height: calc(100% - 160px);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    &-close {
+      position: absolute;
+      right: 40px;
+      top: 28px;
+      color: #fff;
+    }
+    &-img {
+      width: 124px;
+      height: 157px;
+      margin: 125px auto 0;
+      position: relative;
+    }
+    &-positionImg {
+      position: absolute;
+      width: 52px;
+      height: 47px;
+      top: 190px;
+    }
+    &-title {
+      font-family: Noto Sans CJK TC;
+      font-size: 50px;
+      line-height: 74px;
+      width: 100%;
+      margin: -40px auto;
+    }
+    &-detail {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 27px;
+      font-family: "Noto Sans CJK TC";
+      width: 468px;
+    }
+  }
+}
+
+.formContent {
+  width: 40%;
+  height: 100%;
+  color: #fff;
+  overflow: auto;
+  @include breakpoint-sm {
+    width: 100%;
+    height: auto;
+    order: 2;
+  }
+}
+
+.infoContent {
+  width: 60%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  @include breakpoint-sm {
+    width: 100%;
+    order: 1;
+  }
+  &-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 14px;
+    height: 14px;
+    font-size: 16px;
+    line-height: 14px;
+    text-align: center;
+    color: $primary;
+  }
+}
