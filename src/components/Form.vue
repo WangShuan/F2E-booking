@@ -109,7 +109,7 @@
             >
               <img
                 class="booking-icon-img"
-                :src="`./img/icons/${item.img}.svg`"
+                :src="require(`../assets/img/icons/${item.img}.svg`)"
                 :alt="item.img"
               />
               <span class="booking-icon-text">{{ item.name }}</span>
@@ -136,7 +136,7 @@
             <div class="booking-info-step">
               <div class="booking-info-step-top">
                 <img
-                  src="./img/icons/compose.svg"
+                  :src="require(`../assets/img/icons/compose.svg`)"
                   alt=""
                   class="booking-info-step-img"
                 />
@@ -144,14 +144,14 @@
               <div class="booking-info-step-content">送出線上預約單</div>
             </div>
             <img
-              src="./img/icons/previous.svg"
+              :src="require(`../assets/img/icons/previous.svg`)"
               alt="arrow"
               class="booking-info-arrow"
             />
             <div class="booking-info-step">
               <div class="booking-info-step-top">
                 <img
-                  src="./img/icons/search_chat.svg"
+                  :src="require(`../assets/img/icons/search_chat.svg`)"
                   alt=""
                   class="booking-info-step-img"
                 />
@@ -162,14 +162,14 @@
               </div>
             </div>
             <img
-              src="./img/icons/previous.svg"
+              :src="require(`../assets/img/icons/previous.svg`)"
               alt="arrow"
               class="booking-info-arrow"
             />
             <div class="booking-info-step">
               <div class="booking-info-step-top">
                 <img
-                  src="./img/icons/payment.svg"
+                  :src="require(`../assets/img/icons/payment.svg`)"
                   alt=""
                   class="booking-info-step-img"
                 />
@@ -182,7 +182,12 @@
         </div>
       </div>
     </div>
-    <Outcome :isDone="isDone" :isFail="isFail" @closeRet="closeRet"></Outcome>
+    <Outcome
+      v-if="isDone || isFail"
+      :isDone="isDone"
+      :isFail="isFail"
+      @reloadComponents="reloadComponents"
+    ></Outcome>
   </div>
 </template>
 
@@ -208,6 +213,7 @@ export default {
       masks: {
         input: "YYYY - MM - DD",
       },
+      componentsKey: 0,
     };
   },
   components: { Outcome, DatePicker },
@@ -355,9 +361,10 @@ export default {
 
       $.ajax(settings);
     },
-    closeRet() {
-      this.isFail = false;
+    reloadComponents() {
       this.isDone = false;
+      this.isFail = false;
+      this.$emit("reloadComponents");
     },
   },
   created() {

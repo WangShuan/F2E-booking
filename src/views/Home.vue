@@ -30,6 +30,7 @@
             class="imgBtn"
             :style="`background-image: url(./img/room${index + 1}/1.jpeg)`"
           >
+            <!-- src="~@/assets/images/sm-想吃甜點是不需要理由的.svg" -->
             <div
               class="imgBtn-active"
               @click="$router.push(`/booking/${item.id}`)"
