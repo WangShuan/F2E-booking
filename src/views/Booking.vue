@@ -202,7 +202,7 @@ export default {
 
       var difference = Math.abs(day2 - day1);
 
-      return difference / (1000 * 3600 * 24) + 1;
+      return parseInt(difference / (1000 * 3600 * 24) + 1);
     },
     totalPrice: function () {
       var day1 = new Date(this.range.start);
